@@ -12,7 +12,16 @@
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:84px}body{margin:0;color:var(--ink);font-family:Nunito,system-ui,sans-serif;background:var(--sky);background-image:linear-gradient(180deg,#65c8f3 0,#b7edff 46%,#fff4d4 100%);background-attachment:fixed}
 a{color:inherit}.wrap{width:min(1120px,calc(100% - 36px));margin:auto}
 header{position:sticky;top:0;z-index:9;background:var(--red);border-bottom:5px solid var(--ink);box-shadow:0 4px 0 #ffffff70}
-.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:white;font-weight:1000;letter-spacing:.05em;font-size:14px;text-shadow:2px 2px 0 #a61d24}.mushroom{width:39px;height:39px;border:3px solid white;border-radius:50% 50% 38% 38%;background:var(--red);position:relative;box-shadow:0 3px 0 #a61d24}.mushroom:before{content:"";position:absolute;left:7px;top:7px;width:8px;height:8px;border-radius:50%;background:white;box-shadow:13px 0 white}.mushroom:after{content:"";position:absolute;left:12px;bottom:4px;width:9px;height:7px;background:#ffe4b0;border-radius:3px}.links{display:flex;gap:23px;align-items:center}.links a{color:white;text-decoration:none;font-size:11px;font-weight:1000;letter-spacing:.1em;text-shadow:1px 1px #a61d24}.links a:hover{color:var(--yellow)}.links .playlink{background:var(--yellow);color:var(--ink);text-shadow:none;padding:11px 15px;border:3px solid var(--ink);box-shadow:0 4px 0 var(--ink)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:white;font-weight:1000;letter-spacing:.05em;font-size:14px;text-shadow:2px 2px 0 #a61d24}.mushroom{width:39px;height:39px;border:3px solid white;border-radius:50% 50% 38% 38%;background:var(--red);position:relative;box-shadow:0 3px 0 #a61d24}.mushroom:before{content:"";position:absolute;left:7px;top:7px;width:8px;height:8px;border-radius:50%;background:white;box-shadow:13px 0 white}.mushroom:after{content:"";position:absolute;left:12px;bottom:4px;width:9px;height:7px;background:#ffe4b0;border-radius:3px}.links{display:flex;gap:23px;align-items:center}#languageSelect {
+  background: var(--yellow);
+  color: var(--ink);
+  border: 3px solid var(--ink);
+  padding: 9px 10px;
+  font-family: Nunito, sans-serif;
+  font-weight: 1000;
+  border-radius: 5px;
+  cursor: pointer;
+}.links a{color:white;text-decoration:none;font-size:11px;font-weight:1000;letter-spacing:.1em;text-shadow:1px 1px #a61d24}.links a:hover{color:var(--yellow)}.links .playlink{background:var(--yellow);color:var(--ink);text-shadow:none;padding:11px 15px;border:3px solid var(--ink);box-shadow:0 4px 0 var(--ink)}
 .hero{position:relative;overflow:hidden;padding:90px 0 78px;text-align:center;border-bottom:5px solid var(--ink);background:linear-gradient(180deg,#6ed0f5aa,#d9f6ff66)}
 .cloud{position:absolute;width:130px;height:36px;background:#fff;border-radius:40px;opacity:.8;top:55px;left:8%;box-shadow:28px -15px 0 4px white,58px 0 0 -2px white}.cloud.c2{left:auto;right:9%;top:130px;transform:scale(.75)}
 .hero-content{position:relative;z-index:1}.eyebrow{display:inline-block;background:var(--yellow);border:3px solid var(--ink);padding:9px 14px;font-size:10px;font-weight:1000;letter-spacing:.12em;box-shadow:4px 4px 0 var(--ink);transform:rotate(-1deg)}
@@ -31,7 +40,13 @@ footer{background:var(--blue);color:white;padding:25px 0;font-size:11px;font-wei
 </style>
 </head>
 <body>
-<header><div class="wrap nav"><a class="brand" href="#home"><span class="mushroom"></span><span>I WANNA MARIO<br>FIRE CHAIN</span></a><nav class="links"><a href="#game">PLAY</a><a href="#about">ABOUT</a><a href="#controls">CONTROLS</a><a class="playlink" href="#game">PLAY NOW ★</a></nav></div></header>
+<header><div class="wrap nav"><a class="brand" href="#home"><span class="mushroom"></span><span>I WANNA MARIO<br>FIRE CHAIN</span></a><nav class="links"><select id="languageSelect" aria-label="Select language">
+  <option value="en">🇺🇸 English</option>
+  <option value="ja">🇯🇵 日本語</option>
+  <option value="zh-CN">🇨🇳 简体中文</option>
+  <option value="zh-TW">🇹🇼 繁體中文</option>
+  <option value="ko">🇰🇷 한국어</option>
+</select><a href="#game">PLAY</a><a href="#about">ABOUT</a><a href="#controls">CONTROLS</a><a class="playlink" href="#game">PLAY NOW ★</a></nav></div></header>
 <main id="home">
 <section class="hero"><div class="cloud"></div><div class="cloud c2"></div><div class="wrap hero-content"><div class="eyebrow">★ AN OLD-SCHOOL PLATFORM CHALLENGE ★</div><h1>I WANNA MARIO:<span>FIRE CHAIN</span></h1><p class="intro">Jump, dash and dodge your way through a challenging platform adventure. Learn the hazards, master your timing, and reach the goal!</p><div class="buttons"><a class="btn btn-red" href="#game">▶ PLAY THE GAME</a><a class="btn btn-yellow" href="#about">HOW TO PLAY</a></div><div class="decor"><span>🍄</span><span>⭐</span><span>🪙</span><span>🌼</span><span>🍄</span></div></div></section>
 <section class="section" id="game"><div class="wrap"><div class="section-head"><div class="tag">WORLD 1 — START</div><h2 class="heading">LET'S PLAY!</h2><p class="desc">Play directly in your browser. A keyboard is recommended for the full platform-game experience.</p></div><div class="gamebox"><iframe src="game.html" title="I WANNA MARIO: FIRE CHAIN" allow="fullscreen"></iframe><div class="caption"><span>I WANNA MARIO: FIRE CHAIN</span><span>Browser game · Keyboard recommended</span></div></div></div></section>
