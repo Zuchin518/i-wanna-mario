@@ -54,5 +54,30 @@ footer{background:var(--blue);color:white;padding:25px 0;font-size:11px;font-wei
 <section class="section" id="controls"><div class="wrap"><div class="section-head"><div class="tag">PLAYER 1</div><h2 class="heading">CONTROLS</h2><p class="desc">Get familiar with the controls before starting your run.</p></div><div class="controls"><div class="key"><b>← → / A D</b><span>MOVE</span></div><div class="key"><b>SPACE / ↑ / W</b><span>JUMP · DOUBLE JUMP</span></div><div class="key"><b>X / SHIFT</b><span>DASH</span></div><div class="key"><b>P · R · H</b><span>PAUSE · RESTART · HELP</span></div></div></div></section>
 <section class="cta"><div class="wrap"><h2>YOU CAN DO IT!</h2><p>One more try. One more jump. Get to the goal!</p><a class="btn btn-red" href="#game">▶ START PLAYING</a></div></section>
 </main>
-<footer><div class="wrap foot"><span>© I WANNA MARIO: FIRE CHAIN</span><span>INDEPENDENT FAN-MADE PLATFORM GAME PROJECT</span></div></footer>
+<footer><div class="wrap foot"><span>© I WANNA MARIO: FIRE CHAIN</span><span>INDEPENDENT FAN-MADE PLATFORM GAME PROJECT</span></div></footer><script>
+const languageSelect = document.getElementById('languageSelect');
+
+function setLanguage(language) {
+  localStorage.setItem('mario-language', language);
+  document.documentElement.lang = language;
+
+  const gameFrame = document.querySelector('iframe');
+
+  if (gameFrame && gameFrame.contentWindow) {
+    gameFrame.contentWindow.postMessage({
+      type: 'SET_LANGUAGE',
+      language: language
+    }, location.origin);
+  }
+}
+
+languageSelect.addEventListener('change', function() {
+  setLanguage(this.value);
+});
+
+const savedLanguage = localStorage.getItem('mario-language') || 'en';
+
+languageSelect.value = savedLanguage;
+setLanguage(savedLanguage);
+</script>
 </body></html>
